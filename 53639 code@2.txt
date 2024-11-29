@@ -1,0 +1,115 @@
+
+             (Question 1)
+.model small 
+.stack
+.data 
+.code 
+
+  main proc      
+   
+  mov dl,3
+  mov bl,5
+  
+  add dl,bl
+  
+  mov ah,2
+  sub dl,ah
+  
+  mov bh,1
+  sub dl,bh
+  
+  add dl,48
+  
+  mov ah,2
+  int 21h
+  
+  mov ah,4ch
+  int 21h
+  
+   main endp
+  
+ end main
+  
+
+                 (Questin 2)
+
+.model small
+.stack 100h
+.data
+var1 db 3
+var2 db 1
+var3 db 2
+.code
+            main proc
+                
+        mov cx, @data 
+        
+        mov ds, cx
+        
+        add dl, var1
+        add dl, var2
+        add dl, var3
+        
+        add dl, 48
+        
+        mov ah, 2
+        int 21h 
+        
+        mov ah, 4ch
+        int 21h 
+        
+    
+                
+                
+                
+            main endp
+end main
+
+
+ (Question 3)
+
+
+.model small
+.stack 100h
+.data 
+t1 db 'average is : $'
+.code
+           
+            main proc
+                
+        mov ax,@data
+        mov ds,ax
+        
+        LEa dx,t1 
+        
+        mov ah,9
+        int 21h
+        mov ax,3
+        add ax,4
+        add ax,5
+        add ax,3
+        add ax,5
+        
+        mov dl,5 
+        
+        div dl 
+        
+        add ax,48   
+        
+        mov dx,ax
+        
+        
+
+        
+        mov ah, 2
+        int 21h 
+        
+        mov ah, 4ch
+        int 21h 
+        
+    
+                
+                
+                
+            main endp
+end main
